@@ -1,0 +1,19 @@
+<h2>My pet heroes</h2>
+
+<div>
+    <label for="new-pet">Pet name: </label>
+    <input id="new-pet" #petName />
+  
+    <!-- (click) passes input value to add() and then clears the input -->
+    <button type="button" class="add-button" (click)="add(petName.value); petName.value=''">
+      Add pet
+    </button>
+</div>
+
+<ul class="pets">
+    <li *ngFor="let pet of pets">
+        <a >
+            <span class="name">{{ pet }}</span>
+          </a>
+    </li>
+</ul>
